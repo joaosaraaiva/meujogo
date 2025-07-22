@@ -1,0 +1,87 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    
+    /* MUDANÇA: Usamos flexbox para centralizar o canvas perfeitamente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MUDANÇA: O canvas agora NÃO deve ser posicionado de forma absoluta */
+/* Seu tamanho será controlado pelo JavaScript para manter a proporção. */
+#gameCanvas {
+    /* As propriedades width, height e position foram removidas daqui */
+    background-color: #000; /* Cor de fundo para as bordas */
+}
+
+/* O container dos controles continua por cima de TUDO, isso não muda. */
+#virtual-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+/* O resto do CSS para os botões e joystick continua o mesmo */
+#joystick-base {
+    position: fixed;
+    bottom: 30px;
+    left: 40px;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#joystick-handle {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(200, 200, 200, 0.7);
+    border-radius: 50%;
+}
+
+#action-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.action-button {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(128, 0, 128, 0.6);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    user-select: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+#dash-button {
+    margin-bottom: 20px;
+    background-color: rgba(0, 128, 255, 0.6);
+}
+
+.action-button:active, #joystick-base:active #joystick-handle {
+    transform: scale(0.95);
+    filter: brightness(1.2);
+}

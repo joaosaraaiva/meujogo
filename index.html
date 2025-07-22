@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Game Mobile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- A área onde o jogo será desenhado -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Controles Virtuais -->
+    <div id="virtual-controls">
+        <!-- Joystick de Movimento -->
+        <div id="joystick-base">
+            <div id="joystick-handle"></div>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div id="action-buttons">
+            <div id="dash-button" class="action-button">DASH</div>
+            <div id="shoot-button" class="action-button">ATIRAR</div>
+        </div>
+    </div>
+
+    <!-- Inclui o script do jogo no final para garantir que o HTML foi carregado -->
+    <script src="game.js"></script>
+</body>
+</html>
